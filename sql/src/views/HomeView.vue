@@ -1,28 +1,22 @@
 <template>
   <div>
-    <h1>Our Fruits</h1>
-    <Card
-      v-for="fruits in fruits"
-      :key="fruits.name"
-      :name="fruits.name"
-      :calories="fruits.nutritions.calories"
-      :protein="fruits.nutritions.protein"
-    />
+    <h1>Sign In or Create An Account</h1>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import Card from '../components/Card.vue'
-const fruits = ref('')
-async function getData() {
-  let res = await fetch('https://www.fruityvice.com/api/fruit/all')
-  let data = await res.json()
-  fruits.value = data
-}
-onMounted(() => {
-  getData()
-})
+import { createClient } from '@supabase/supabase-js'
+
+// Create a single supabase client for interacting with your database
+const supabaseUrl = 'https://ntqenbxyupsazuqcufkq.supabase.co'
+const supabaseKey = process.env.SUPABASE_KEY
+const supabase = createClient(supabaseUrl, supabaseKey)
+// const { data: users, error } = await supabase.from('users').select('*')
+
+// let { data, error } = await supabase.auth.signUp({
+//   email: '',
+//   password: ''
+// })
 </script>
 
 <style scoped></style>

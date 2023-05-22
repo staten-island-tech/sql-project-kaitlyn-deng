@@ -1,8 +1,8 @@
 <template>
   <div class="card">
-    <h1>{{ name }}</h1>
-    <h2>{{ calories }}</h2>
-    <h3>{{ protein }}</h3>
+    <h1>Fruit Name: {{ name }}</h1>
+    <h2>Calories: {{ calories }}</h2>
+    <h3>Protein: {{ protein }}</h3>
   </div>
 </template>
 
