@@ -11,12 +11,12 @@ import { createClient } from '@supabase/supabase-js'
 const supabaseUrl = 'https://ntqenbxyupsazuqcufkq.supabase.co'
 const supabaseKey = process.env.SUPABASE_KEY
 const supabase = createClient(supabaseUrl, supabaseKey)
-// const { data: users, error } = await supabase.from('users').select('*')
 
-// let { data, error } = await supabase.auth.signUp({
-//   email: '',
-//   password: ''
+// const { data, error } = await supabase.auth.signUp({
+//   email: 'example@email.com',
+//   password: 'example-password'
 // })
+const { error } = await supabase.from('profiles').insert({ id: 1, name: 'Denmark' })
 </script>
 
 <style scoped></style>
