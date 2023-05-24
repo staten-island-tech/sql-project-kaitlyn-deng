@@ -7,6 +7,14 @@
 </template>
 
 <script>
+const supabaseUrl = 'https://ntqenbxyupsazuqcufkq.supabase.co'
+const supabaseKey = process.env.SUPABASE_KEY
+const supabase = createClient(supabaseUrl, supabaseKey)
+
+async function select() {
+  const { data, error } = await supabase.from('fruit').select('name', 'calories', 'protein')
+}
+
 export default {
   props: {
     name: String,
