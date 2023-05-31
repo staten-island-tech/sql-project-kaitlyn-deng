@@ -1,14 +1,12 @@
-<script>
+<script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
   <header>
     <nav>
-      <RouterLink to="/">Sign In</RouterLink>
+      <RouterLink to="/">Create</RouterLink>
       <RouterLink to="/menu">Menu</RouterLink>
-      <RouterLink to="/create">Create</RouterLink>
     </nav>
     <RouterView />
   </header>

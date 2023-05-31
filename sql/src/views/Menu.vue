@@ -14,12 +14,12 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
+// const supabaseUrl = 'https://ntqenbxyupsazuqcufkq.supabase.co'
+// const supabaseKey = process.env.SUPABASE_KEY
+// const supabase = createClient(supabaseUrl, supabaseKey)
 import Card from '../components/Card.vue'
-const supabaseUrl = 'https://ntqenbxyupsazuqcufkq.supabase.co'
-const supabaseKey = process.env.SUPABASE_KEY
-const supabase = createClient(supabaseUrl, supabaseKey)
 
-const fruit = ref('')
+const fruit = ref([])
 async function getData() {
   try {
     const { data } = await supabase.from('fruit').select('*')

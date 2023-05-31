@@ -1,9 +1,4 @@
 <template>
-  <!-- <div class="container">
-    <h1>Sign In or Create An Account</h1>
-    <div class="username"></div>
-    <div class="password"></div>
-  </div> -->
   <form class="row flex-center flex" @submit.prevent="handleLogin">
     <div class="col-6 form-widget">
       <h1 class="header">Supabase + Vue 3</h1>
@@ -25,7 +20,10 @@
 
 <script setup>
 import { ref } from 'vue'
-import { supabase } from '../supabase'
+
+const supabaseUrl = 'https://ntqenbxyupsazuqcufkq.supabase.co'
+const supabaseKey = process.env.SUPABASE_KEY
+const supabase = createClient(supabaseUrl, supabaseKey)
 
 const loading = ref(false)
 const email = ref('')
