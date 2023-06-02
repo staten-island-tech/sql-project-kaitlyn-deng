@@ -1,8 +1,9 @@
 <template>
   <div class="card">
-    <h1>Fruit Name: {{ name }}</h1>
-    <h2>Calories: {{ calories }}</h2>
-    <h3>Protein: {{ protein }}</h3>
+    <h1>{{ name }}</h1>
+    <img src="{{ imageurl }}"></img>
+    <p>Calories: {{ calories }}</p>
+    <p>Protein: {{ protein }}</p>
   </div>
 </template>
 
@@ -10,10 +11,23 @@
 export default {
   props: {
     name: String,
+    imageurl: String,
     calories: Number,
-    protein: Number
+    protein: Number,
   }
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.card {
+  border-radius: 30px;
+  background-color: antiquewhite;
+  width: 30rem;
+  height: 6rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 5px;
+  margin: 10px;
+}
+</style>

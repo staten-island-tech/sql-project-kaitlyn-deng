@@ -9,6 +9,7 @@
 import { onMounted, ref } from 'vue'
 import Account from '../components/Account.vue'
 import Auth from '../components/Auth.vue'
+import { supabase } from '../supabase'
 
 // const supabaseUrl = 'https://ntqenbxyupsazuqcufkq.supabase.co'
 // const supabaseKey = process.env.SUPABASE_KEY

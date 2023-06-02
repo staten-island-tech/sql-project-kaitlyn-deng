@@ -1,10 +1,11 @@
 <template>
-  <div>
+  <div class="container">
     <h1>Our Fruits</h1>
     <Card
       v-for="fruits in fruit"
       :key="fruits.name"
       :name="fruits.name"
+      :img="fruits.imageurl"
       :calories="fruits.calories"
       :protein="fruits.protein"
     />
@@ -12,6 +13,7 @@
 </template>
 
 <script setup>
+import { supabase } from '../supabase'
 import { ref, onMounted } from 'vue'
 
 // const supabaseUrl = 'https://ntqenbxyupsazuqcufkq.supabase.co'
@@ -19,7 +21,7 @@ import { ref, onMounted } from 'vue'
 // const supabase = createClient(supabaseUrl, supabaseKey)
 import Card from '../components/Card.vue'
 
-const fruit = ref([])
+const fruit = ref(['fruit'])
 async function getData() {
   try {
     const { data } = await supabase.from('fruit').select('*')
@@ -33,4 +35,11 @@ onMounted(() => {
 })
 </script>
 
-<style scoped></style>
+<style scoped>
+.container {
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+}
+</style>

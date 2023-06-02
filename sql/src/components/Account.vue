@@ -29,10 +29,11 @@
 </template>
 
 <script setup>
-const supabaseUrl = 'https://ntqenbxyupsazuqcufkq.supabase.co'
-const supabaseKey = process.env.SUPABASE_KEY
-const supabase = createClient(supabaseUrl, supabaseKey)
+// const supabaseUrl = 'https://ntqenbxyupsazuqcufkq.supabase.co'
+// const supabaseKey = process.env.SUPABASE_KEY
+// const supabase = createClient(supabaseUrl, supabaseKey)
 import { onMounted, ref, toRefs } from 'vue'
+import { supabase } from '../supabase'
 
 const props = defineProps(['session'])
 const { session } = toRefs(props)
