@@ -5,7 +5,6 @@
       v-for="fruits in fruit"
       :key="fruits.name"
       :name="fruits.name"
-      :img="fruits.imageurl"
       :calories="fruits.calories"
       :protein="fruits.protein"
     />
@@ -41,5 +40,9 @@ onMounted(() => {
   text-align: center;
   padding: 10px;
   margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
 }
 </style>

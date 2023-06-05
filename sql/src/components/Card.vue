@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <h1>{{ name }}</h1>
-    <img src="{{ imageurl }}"></img>
+    <!-- <img src="{{ imageurl }}"> -->
     <p>Calories: {{ calories }}</p>
     <p>Protein: {{ protein }}</p>
   </div>
@@ -11,7 +11,7 @@
 export default {
   props: {
     name: String,
-    imageurl: String,
+    // imageurl: String,
     calories: Number,
     protein: Number,
   }
@@ -22,12 +22,15 @@ export default {
 .card {
   border-radius: 30px;
   background-color: antiquewhite;
-  width: 30rem;
+  width: 20rem;
   height: 6rem;
+  padding: 5px;
+  margin: 10px;
+  color: black;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  padding: 5px;
-  margin: 10px;
+  justify-content: space-around;
+  align-items: center;
 }
 </style>
