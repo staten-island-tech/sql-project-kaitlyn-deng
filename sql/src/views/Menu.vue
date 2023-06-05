@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <h1>Our Fruits</h1>
+    <h1>Start an Order.</h1>
+    <h2>Select your fruits.</h2>
     <Card
       v-for="fruits in fruit"
       :key="fruits.name"
@@ -29,6 +30,11 @@ async function getData() {
     console.log(error)
   }
 }
+
+// const { data, error } = await supabase
+//   .from('orders')
+//   .insert({ email: email.value, fruits: fruit.value, notes: notes.value })
+
 onMounted(() => {
   getData()
 })
@@ -37,12 +43,13 @@ onMounted(() => {
 <style scoped>
 .container {
   font-size: 0.75rem;
-  text-align: center;
   padding: 10px;
   margin: 10px;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
+  width: 100rem;
+  align-items: center;
 }
 </style>

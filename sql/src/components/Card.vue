@@ -1,37 +1,34 @@
 <template>
   <div class="card">
     <h1>{{ name }}</h1>
-    <!-- <img src="{{ imageurl }}"> -->
     <p>Calories: {{ calories }}</p>
     <p>Protein: {{ protein }}</p>
-    <button @click="add(), count++"> Add to Order</button>
+    <button @click="add(), count++">Add to Order</button>
   </div>
 </template>
 
 <script>
-import { cart } from "../views/cart";
+import { cart } from '../views/cart'
 export default {
-  name: "Card",
+  name: 'Card',
   props: {
     name: String,
-    // imageurl: String,
     calories: Number,
-    protein: Number,
+    protein: Number
   },
-  methods:{
-      add(){
-        cart.cart.push({
-          name:this.name,
-
-        })
-        console.log(cart.cart)
-      }
-    },
-    data(){
-      return{
-        count:0
-      }
+  methods: {
+    add() {
+      cart.cart.push({
+        name: this.name
+      })
+      console.log(cart.cart)
     }
+  },
+  data() {
+    return {
+      count: 0
+    }
+  }
 }
 </script>
 

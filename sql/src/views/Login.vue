@@ -10,11 +10,12 @@ import { onMounted, ref } from 'vue'
 import Account from '../components/Account.vue'
 import Auth from '../components/Auth.vue'
 import { supabase } from '../supabase'
+import { useAuthStore } from '../stores/auth'
 
 // const supabaseUrl = 'https://ntqenbxyupsazuqcufkq.supabase.co'
 // const supabaseKey = process.env.SUPABASE_KEY
 // const supabase = createClient(supabaseUrl, supabaseKey)
-
+const store = useAuthStore()
 const session = ref()
 
 onMounted(() => {
