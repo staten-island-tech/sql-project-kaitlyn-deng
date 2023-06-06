@@ -2,6 +2,7 @@
   <div class="container">
     <Account v-if="session" :session="session" />
     <Auth v-else />
+    <RouterLink to="/signup">Sign Up</RouterLink>
   </div>
 </template>
 
@@ -12,9 +13,6 @@ import Auth from '../components/Auth.vue'
 import { supabase } from '../supabase'
 import { useAuthStore } from '../stores/auth'
 
-// const supabaseUrl = 'https://ntqenbxyupsazuqcufkq.supabase.co'
-// const supabaseKey = process.env.SUPABASE_KEY
-// const supabase = createClient(supabaseUrl, supabaseKey)
 const store = useAuthStore()
 const session = ref()
 

@@ -11,6 +11,7 @@
     </div>
     <div class="container">
       <button @click="createAccount">Create Account</button>
+      <RouterLink to="/">Log In</RouterLink>
       <!-- <button @click="login">Log In</button>
         <button @click="logout">Log Out</button> -->
     </div>
