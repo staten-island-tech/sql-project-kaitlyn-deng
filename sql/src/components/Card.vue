@@ -3,7 +3,7 @@
     <h1>{{ name }}</h1>
     <p>Calories: {{ calories }}</p>
     <p>Protein: {{ protein }}</p>
-    <button @click="add(), count++">Add to Order</button>
+    <button @click="selectedFruit()">Add to Order</button>
   </div>
 </template>
 
@@ -17,7 +17,7 @@ export default {
     protein: Number
   },
   methods: {
-    add() {
+    selectedFruit() {
       cart.cart.push({
         name: this.name
       })
@@ -33,18 +33,27 @@ export default {
 </script>
 
 <style scoped>
-.card {
-  border-radius: 30px;
-  background-color: antiquewhite;
-  width: 20rem;
-  height: 6rem;
-  padding: 5px;
-  margin: 10px;
-  color: black;
+body {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
-  justify-content: space-around;
+  text-align: center;
+}
+.card {
+  font-size: 10px;
+  border-radius: 20px;
+  text-align: center;
+  color: black;
   align-items: center;
+  padding: 10px;
+  margin:10px;
+  background-color:bisque;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+button{
+  border-radius: 30px;
+  padding: 10px;
+  margin: 5px;
 }
 </style>

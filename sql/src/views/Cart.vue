@@ -1,33 +1,29 @@
 <template>
+  <header>Finalize your order</header>
   <div class="confirm">
-    <header>Finalize your order.</header>
-    <label for="email">Email:</label>
-    <input type="email" id="email" v-model="email" />
-    <ul v-for="item in cart" :key="item" :item="item">
+    <ol v-for="item in cart" :key="item" :item="item">
       {{
         item.name
       }}
-    </ul>
-    <label for="notes">Notes:</label>
-    <input type="notes" id="notes" v-model="notes" />
+    </ol>
   </div>
 </template>
 
 <script>
 import { cart } from '../views/cart.js'
-let { data: orders, error } = await supabase.from('orders').select(`
-    email,
-    fruit (
-      public.orders.email
-    )
-  `)
+// let { data, error } = await supabase.from('orders').select(`
+//    *,
+//     fruit (
+//       *
+//     )
+//   `)
 
 export default {
   name: 'confirm',
 
   data() {
     return {
-      cart: cart.cart
+      cart: cart.cart,
     }
   }
 }
@@ -37,10 +33,11 @@ export default {
 header {
   text-align: center;
   font-size: 1.5rem;
+  color: white;
 }
 .confirm,
 ul {
-  color: black;
+  color: white;
   margin: 10px;
   padding: 10px;
   text-align: center;

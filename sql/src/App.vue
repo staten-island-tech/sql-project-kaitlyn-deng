@@ -5,40 +5,56 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <header>
     <nav>
-      <RouterLink to="/">Log In</RouterLink>
-      <RouterLink to="/signup">Sign Up</RouterLink>
-      <RouterLink to="/menu">Menu</RouterLink>
-      <RouterLink to="/cart">Cart</RouterLink>
+      <RouterLink to="/">Log In</RouterLink> |
+      <RouterLink to="/signup">Sign Up</RouterLink> |
+      <RouterLink to="/create">Create an Order</RouterLink> |
+      <RouterLink to="/cart">Finalize Order</RouterLink>
     </nav>
     <RouterView />
   </header>
 </template>
 
 <style scoped>
+body{
+  background-color:rgb(255, 255, 255)
+}
+h1{
+  font: 30px;
+  text-align: center;
+  font-weight: 600;
+}
+ h2, h3{
+  color:black;
+  text-align: center;
+  text-align: center;
+  padding: 10px;
+  margin:10px
+}
+.nav {
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 30px;
+  background-color: rgb(202, 141, 193);
+  padding: 10px;
+  margin:10px;
+  border-color: black;
+  align-items: center;
+}
 header {
   line-height: 1.5;
   max-height: 100vh;
+  text-align: center;
+  align-items: center;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
+/* nav {
   width: 100%;
   font-size: 12px;
   text-align: center;
   margin-top: 2rem;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
 
 nav a {
   display: inline-block;
@@ -49,24 +65,12 @@ nav a {
 nav a:first-of-type {
   border: 0;
 }
-
 @media (min-width: 1024px) {
   header {
     display: flex;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
   }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
   nav {
     text-align: left;
     margin-left: -1rem;
@@ -75,5 +79,5 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-}
-</style>
+} */
+</style> */
