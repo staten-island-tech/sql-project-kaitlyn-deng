@@ -1,32 +1,28 @@
 <template>
-  <div class="container">  
+  <div class="container">
     <header>Start an Order</header>
-  <h1>Select your fruits.</h1>
+    <h1>Select your fruits.</h1>
 
     <Card
-    v-for="fruits in fruit"
-    :key="fruits.name"
-    :name="fruits.name"
-    :calories="fruits.calories"
-    :protein="fruits.protein"
-  />
+      v-for="fruits in fruit"
+      :key="fruits.name"
+      :name="fruits.name"
+      :calories="fruits.calories"
+      :protein="fruits.protein"
+    />
 
-  <form class="form">
-    <p>Enter your email.</p>
-    <label for="email"></label>
-    <input type="email" id="email" v-model="email" required />
+    <form class="form">
+      <p>Enter your email.</p>
+      <label for="email"></label>
+      <input type="email" id="email" v-model="email" required />
 
-    <p>Optional: Include notes for your order.</p>
-    <label for="notes"></label>
-    <input type="notes" id="notes" v-model="notes" />
-    <button @click="create">Create Order</button>
-  </form>
- </div>
- 
-
-  </template>
-  <!-- 
-</template> -->
+      <p>Optional: Include notes for your order.</p>
+      <label for="notes"></label>
+      <input type="notes" id="notes" v-model="notes" />
+      <button @click="create">Create Order</button>
+    </form>
+  </div>
+</template>
 
 <script setup>
 import { supabase } from '../supabase'

@@ -14,8 +14,8 @@ import { cart } from '../views/cart.js'
 import { supabase } from '../supabase'
 
 let { data, error } = await supabase.from('orders').select(`
-   *,
-    fruit (
+    email,
+    profiles (
       *
     )
   `)
