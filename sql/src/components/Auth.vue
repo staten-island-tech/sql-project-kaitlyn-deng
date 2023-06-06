@@ -20,9 +20,6 @@
 <script setup>
 import { ref } from 'vue'
 import { supabase } from '../supabase'
-// const supabaseUrl = 'https://ntqenbxyupsazuqcufkq.supabase.co'
-// const supabaseKey = process.env.SUPABASE_KEY
-// const supabase = createClient(supabaseUrl, supabaseKey)
 
 const loading = ref(false)
 const email = ref('')

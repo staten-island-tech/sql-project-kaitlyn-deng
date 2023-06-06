@@ -2,7 +2,8 @@
   <div class="container">
     <Account v-if="session" :session="session" />
     <Auth v-else />
-    <RouterLink to="/signup">Sign Up</RouterLink>
+    <p>Don't have an account?</p>
+    <RouterLink to="/signup">Sign up here</RouterLink>
   </div>
 </template>
 
