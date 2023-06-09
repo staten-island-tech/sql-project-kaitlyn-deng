@@ -1,6 +1,6 @@
 <template>
-  <div class="confirm">
-    <header>Finalize your order</header>
+  <div class="container">
+    <header>See Orders</header>
     <Card2
       v-for="order in orders"
       :key="order.email"
@@ -57,9 +57,23 @@ onMounted(() => {
 </script>
 
 <style scoped>
+body{
+  background-color: white;
+  
+}
 header {
   text-align: center;
   font-size: 1.5rem;
-  color: white;
+  color: rgb(0, 0, 0);
+}
+.container {
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
 }
 </style>

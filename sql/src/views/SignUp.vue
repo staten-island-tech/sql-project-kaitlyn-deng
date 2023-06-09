@@ -1,19 +1,19 @@
 <template>
-  <div>
-    <h1>Sign Up</h1>
-    <div class="container">
-      <label for="email">Email:</label>
+  <div class="container">
+    <header>Sign Up</header>
+    <div class="label">
+      <label for="email">Email: </label>
       <input type="email" id="email" v-model="email" />
     </div>
-    <div class="container">
-      <label for="username">Username:</label>
+    <div class="label">
+      <label for="username">Username: </label>
       <input type="username" id="username" v-model="username" />
     </div>
-    <div class="container">
-      <label for="password">Password:</label>
+    <div class="label">
+      <label for="password">Password: </label>
       <input type="password" id="password" v-model="password" />
     </div>
-    <div class="container">
+    <div class="label">
       <button @click="createAccount">Create Account</button>
       <p>Already have an account?</p>
       <RouterLink to="/">Log in here</RouterLink>
@@ -74,4 +74,37 @@ if (error) {
 // }
 </script>
 
-<style scoped></style>
+<style scoped>
+body{
+  background-color: white;
+}
+header{
+font-size: 1.5rem;
+}
+.container {
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  align-items: center;
+  text-align: center;
+
+}
+button{
+  border-radius: 30px;
+  background-color: pink;
+  color:black;
+  margin: 10px;
+  padding: 10px;
+  align-items: center;
+  text-align: center;
+}
+.label{
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+label{
+  font-size: 1rem;
+}
+</style>

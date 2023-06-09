@@ -66,19 +66,24 @@ header {
   padding: 10px;
   margin: 10px;
   font-size: 1.5rem;
+  color: black;
+}
+h1{
+  font-size: 1rem;
 }
 .container {
-  color: gray;
+  color: rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
   padding: 10px;
   margin: 10px;
+  background-color: white;
 }
 .form {
   background-color: antiquewhite;
-  color: gray;
+  color: rgb(0, 0, 0);
   border-radius: 30px;
   padding: 10px;
   margin: 10px;
@@ -88,6 +93,7 @@ button {
   border-radius: 30px;
   padding: 10px;
   margin: 10px;
+  background-color: pink;
 }
 .box {
   background-color: antiquewhite;

@@ -4,7 +4,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-    <nav>
+    <nav class="nav">
       <RouterLink to="/">Log In</RouterLink> |
       <RouterLink to="/signup">Sign Up</RouterLink> |
       <RouterLink to="/create"> Create Order</RouterLink> |
@@ -35,7 +35,7 @@ h1{
   font-size: 1rem;
   text-align: center;
   border-radius: 30px;
-  background-color: rgb(202, 141, 193);
+  background-color: white;
   padding: 10px;
   margin:10px;
   border-color: black;

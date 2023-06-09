@@ -1,7 +1,7 @@
 <template>
     <div class="card">
       <h1>Email: {{ email }}</h1>
-      <p>Fruit: {{ fruits }}</p>
+      <h2>Fruit: {{ fruits }}</h2>
     </div>
   </template>
   
@@ -48,6 +48,7 @@
     border-radius: 30px;
     padding: 10px;
     margin: 5px;
+    background-color: pink;
   }
   </style>
   

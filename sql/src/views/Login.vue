@@ -3,16 +3,20 @@
     <header>Log In</header>
     <!-- <Account v-if="session" :session="session" />
     <Auth v-else /> -->
-    <label for="email">Email:</label>
+    <div class="label">
+      <label for="email">Email: </label>
     <input type="email" id="email" v-model="email">
-    <br>
- 
-      <label for="username">Username:</label>
+    </div>
+   
+
+    <div class="label">
+      <label for="username">Username: </label>
       <input type="username" id="username" v-model="username" />
-  <br>
-    <label for="email">Password:</label>
+    </div>
+    <div class="label">
+    <label for="password">Password: </label>
     <input type="password" id="password" v-model="password">
-    <br>
+    </div>
     <button @click="login">Log In</button>
     <p>Don't have an account?</p>
     <RouterLink to="/signup">Sign up here</RouterLink>
@@ -54,14 +58,37 @@ router.push({path: '/create'})
 </script>
 
 <style scoped>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
+body{
+  background-color: white;
+}
+header{
+font-size: 1.5rem;
 }
 .container {
-  padding: 50px 0 100px 0;
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  align-items: center;
+  text-align: center;
+
 }
+button{
+  border-radius: 30px;
+  background-color: pink;
+  color:black;
+  margin: 10px;
+  padding: 10px;
+  align-items: center;
+  text-align: center;
+}
+.label{
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+label{
+  font-size: 1rem;
+}
+
 </style>
