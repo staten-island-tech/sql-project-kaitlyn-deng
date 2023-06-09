@@ -6,6 +6,10 @@
       <input type="email" id="email" v-model="email" />
     </div>
     <div class="container">
+      <label for="username">Username:</label>
+      <input type="username" id="username" v-model="username" />
+    </div>
+    <div class="container">
       <label for="password">Password:</label>
       <input type="password" id="password" v-model="password" />
     </div>
@@ -19,25 +23,36 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue'
 import { supabase } from '../supabase'
+import router from "../router/index"
 
-let email = ref('')
-let password = ref('')
+const email = ref('')
+const password = ref('')
+const username = ref('')
 
 async function createAccount() {
   const { data, error } = await supabase.auth.signUp({
     email: email.value,
-    password: password.value
+    password: password.value,
+    options:{
+      data:{
+        username: username.value
+      }
+    }
   })
   if (error) {
     console.log(error)
   } else {
     console.log(data)
   }
+  await supabase.from("profiles").insert({email: email.value, password: password.value})
+if (error) {
+    console.log(error)
+  }
+  router.push({path: '/'})
 }
-createAccount()
 // async function login(){
 //   const { data, error } = await supabase.auth.signInWithOtp({
 //   email: email.value

@@ -7,8 +7,8 @@ import { RouterLink, RouterView } from 'vue-router'
     <nav>
       <RouterLink to="/">Log In</RouterLink> |
       <RouterLink to="/signup">Sign Up</RouterLink> |
-      <RouterLink to="/create">Create an Order</RouterLink> |
-      <RouterLink to="/cart">Finalize Order</RouterLink>
+      <RouterLink to="/create"> Create Order</RouterLink> |
+      <RouterLink to="/cart">Confirm Order</RouterLink>
     </nav>
     <RouterView />
   </header>

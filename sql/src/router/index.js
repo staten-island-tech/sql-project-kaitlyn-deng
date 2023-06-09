@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import {useAuthStore} from '../stores/auth'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,7 +20,8 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/Create.vue')
+      component: () => import('../views/Create.vue'),
+      meta: {requiresAuth: true}
     },
     {
       path: '/cart',
@@ -27,10 +29,22 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/Cart.vue')
+      component: () => import('../views/Cart.vue'),
+      meta: {requiresAuth: true}
     }
 
   ]
+})
+
+router.beforeEach((to, from, next) => {
+  const auth = useAuthStore()
+  if (to.matched.some((record) => record.meta.requiresAuth) && auth.currentUser === null) 
+  {
+    next('/') 
+    }else{
+      next()
+    }
+
 })
 
 export default router

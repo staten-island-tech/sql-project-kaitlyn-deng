@@ -1,31 +1,56 @@
 <template>
   <div class="container">
-    <Account v-if="session" :session="session" />
-    <Auth v-else />
+    <header>Log In</header>
+    <!-- <Account v-if="session" :session="session" />
+    <Auth v-else /> -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" v-model="email">
+    <br>
+ 
+      <label for="username">Username:</label>
+      <input type="username" id="username" v-model="username" />
+  <br>
+    <label for="email">Password:</label>
+    <input type="password" id="password" v-model="password">
+    <br>
+    <button @click="login">Log In</button>
     <p>Don't have an account?</p>
     <RouterLink to="/signup">Sign up here</RouterLink>
   </div>
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
-import Account from '../components/Account.vue'
-import Auth from '../components/Auth.vue'
+import {ref } from 'vue'
+// import Account from '../components/Account.vue'
+// import Auth from '../components/Auth.vue'
 import { supabase } from '../supabase'
-import { useAuthStore } from '../stores/auth'
+import router from "../router/index"
+import {useAuthStore} from '../stores/auth'
 
-const store = useAuthStore()
-const session = ref()
+const authStore = useAuthStore()
+const email = ref('')
+const password = ref('')
+const username = ref('')
 
-onMounted(() => {
-  supabase.auth.getSession().then(({ data }) => {
-    session.value = data.session
+async function login(){
+  const {data, error} = await supabase.auth.signInWithPassword({
+    email: email.value,
+    password: password.value,
+    options:{
+      data:{
+        username: username.value
+      }
+    }
   })
-
-  supabase.auth.onAuthStateChange((_, _session) => {
-    session.value = _session
-  })
-})
+  const { data: { user } } = await supabase.auth.getSession();
+authStore.loadUser(user);
+if(error){
+  console.log(error)
+}else{
+  console.log(data)
+}
+router.push({path: '/create'})
+}
 </script>
 
 <style scoped>
